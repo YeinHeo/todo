@@ -17,3 +17,4 @@ $input.addEventListener('keydown', function (e) {
   if (e.keyCode !== 13) return;
   create_li_event();
 })
+console.log()
