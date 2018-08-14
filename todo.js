@@ -11,28 +11,26 @@ var create_li_event = function () {
   itemNum++;
 
   var $input = document.querySelector('input');
-  var result = document.querySelector('.result');
-
+  var result = document.querySelector('.selected');
   var $li = document.createElement('li');
-
-  var span = document.createElement("span");
+  var label = document.createElement("label");
   var $button = document.createElement('button') ;
-  $button.innerText='delete';
+  //$button.innerText='delete';
 
-  span.id="list_"+itemNum;
+  //<input class="toggle" type="checkbox">
+  //<button class="delete"></button>
+
+  label.id="list_"+itemNum;
   $button.id="button_"+itemNum;
+  //$button.onclick=deleteUpdate;
 
-  $button.onclick=deleteUpdate;
-
-  span.innerText = $input.value;
-
+  label.innerText = $input.value;
   //span.innerHtml = '';
 
-  $li.appendChild(span);
+  $li.appendChild(label);
   $li.appendChild($button);
   console.log($li);
-
-  result.appendChild($li);
+  (todo-list).appendChild($li);
 
   $input.value = '';
 }

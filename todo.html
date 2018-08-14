@@ -1,175 +1,53 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Vanilla ES6 • TodoMVC</title>
-
-    <style>
-    body{
-      background:rgb(230, 230, 230);
-      font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font:14px;
-      text-decoration:none;
-    }
-    #subject1{
-      font:24px;
-      font-weight:500;
-      line-height:28.8px;
-    }
-    #subject2{
-      font-weight:500;
-      line-height:1.2;
-    }
-    #links1{
-      color:rgb(184, 63, 69);
-      font-weight: 400;
-      line-height:1.2;
-    }
-    #titlebox{
-      width:272px;
-      border-top:2px dotted gray;
-      border-bottom:2px dotted gray;
-      line-height:19.6px;
-    }
-    #contentbox1{
-      width:272px;
-      color:rgb(77, 77, 77);
-      font-family:Arial;
-      font-size:15px;
-      font-style: italic;
-      font-weight:300;
-      line-height:19.5px;
-    }
-    #links2{
-      color:rgb(184, 63, 69);
-      font-weight: 400;
-      text-align:right;
-      display:block;
-    }
-    #links3{
-      color:rgb(184, 63, 69);
-      font-weight: 400;
-    }
-    #links1:hover,#links2:hover,#links3:hover{
-      color: #787e7e;
-      text-decoration:underline;
-    }
-    #contentbox2{
-      width:272px;
-      color:rgb(77, 77, 77);
-      font-family:Arial;
-      font-size:14px;
-      font-style: italic;
-      font-weight:300;
-      line-height:19.6px;
-    }
-    #leftgrid{
-      background-color:rgba(255, 255, 255, 0.6);
-      width:272px;
-      padding:10px;
-    }
-    @media(max-width:900px){
-      #leftgrid{
-        display:none;
-      }
-    }
-    #grid{
-      display:grid;
-      grid-template-columns: 300px 1fr;
-    }
-    h1{
-      color:rgba(175, 47, 47, 0.15);
-      font-size:100px;
-      font-weight:100;
-      text-align:center;
-      margin-bottom:0;
-      display:block;
-    }
-    input{
-      font: Arial;
-      font-size:24px;
-      color:rgb(77, 77, 77);
-      padding:16px 16px 16px 60px;
-      width:550px;
-      background:white;
-      border-color:rgb(238, 238, 238);
-      text-align:start;
-      box-shadow:inset 0 -2px 1px rgba(0,0,0,0.03);
-      display:inline-block;
-      border : none;
-    }
-    :focus {
-      outline: none;
-    }     /*delete placeholder blue color */
-    ::placeholder{
-      font-size: 24px;
-      font-family: font-family:Arial;
-      font-weight: 300;
-      font-style:italic;
-      text-color:rgb(77, 77, 77);
-    }
-    #add{
-      color:rgb(191, 191, 191);
-      font-size:10px;
-      font-weight:300;
-      text-align:center;
-      line-height:20px;
-      padding:10px;
-      display:block;
-    }
-    a{
-      color:rgb(191, 191, 191);
-      text-decoration:none;
-    }
-    a:hover{
-      text-decoration: underline;
-    }
-    button{
-      width:50px;
-      height:30px;
-    }
-    </style>
-  </head>
-  <body>
-    <div id="grid">
-    <div id="leftgrid">
-
-      <h2 id="subject1">ECMAScript 6</h2>
-      <h5 id="subject2">Vanilla ES6 Example</h5>
-      <h5><a href="https://github.com/tastejs/todomvc/tree/gh-pages/examples/vanilla-es6" id="links1">Source</a></h5>
-
-    <div id="titlebox">
-      <div id="contentbox1">
-        <p>The ECMAScript 6 (ES2015) standard was ratified in 2015
-          following years of work standardizing improvements to ECMAScript 3.
-          The committee introduced a wide variety of improvements
-          such as arrow functions, const declarations, and native Promises.</p>
-      </div>
-    <h5><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" id="links2">ECMAScript 6</a></h5>
-    </div>
-
-    <div id=contentbox2>
-    <p>
-      If you have other helpful links to share, or find any of the links
-      above no longer work, please <a href="https://github.com/tastejs/todomvc/issues" id="links3">let us know.</a>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="todo">
+  <section class="todoapp">
+    <header class="header">
+      <h1>todos</h1>
+      <input class="new-todo" placeholder="What needs to be done?" autofocus="">
+    </header>
+    <section class="main">
+      <input class="toggle-all" type="checkbox">
+      <label for="toggle-all">Mark all as complete</label>
+      <ul class="todo-list">
+        <li class="" data-id="1534153977842">
+          <input class="toggle" type="checkbox">
+          <label>aaaa</label>
+          <button class="delete"></button>
+        </li>
+        <li class="" data-id="1534153979057">
+          <input class="toggle" type="checkbox">
+          <label>vvv</label>
+          <button class="delete"></button>
+        </li>
+      </ul>
+    </section>
+    <footer class="footer">
+      <span class="todo-count">2 items left</span>
+      <ul class="filters">
+        <li>
+          <a id="all" class="selected">All</a>
+        </li>
+        <li>
+          <a id="active" class="">Active</a>
+        </li>
+        <li>
+          <a id="completed" class="">Completed</a>
+        </li>
+      </ul>
+      <button class="clear-completed">Clear completed</button>
+    </footer>
+  </section>
+  <footer class="info">
+    <p>Created by
+      <a href="https://www.github.com/joeunha">Joeun Ha</a>
     </p>
-  </div>
-  </div>
-
-  <div id="rightgrid">
-    <h1>todos</h1>
-    <center><input type="text" placeholder="What needs to be done?"></center>
-    <ul class="result">
-
-    </ul>
-
-    <p id="add">Double-click to edit a todo<br>
-      Written by <a href="https://twitter.com/lukeed05">Luke Edwards</a><br>
-      Refactored by <a href="https://github.com/xorgy">Aaron Muir Hamilton</a><br>
-      Part of <a href="http://todomvc.com/">TodoMVC</a>
-    </p>
-  </div>
-
-  <script src="todo.js"></script>
-  </body>
+  </footer>
+</body>
+<script src="todo.js"></script>
 </html>
